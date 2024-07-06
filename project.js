@@ -153,3 +153,28 @@ var DrawBezier = (
   for (let i = 0; i <= 1; i += 0.01) {
     drawLine(bezOrg, bt.moveAlong(bezOrg, rotation, (1 - bezierEasing(i)) * bezLen[0] * scale));
     bezOrg = bt.moveAlong(bezOrg, rotation, (1 - bezierEasing(i)) * bezLen[0] * scale);
+  }
+  drawLine(bezOrg, origin2);
+  return origin2;
+};
+
+// Draw and display quote
+function displayQuote(quote) {
+  let x = Padding;
+  let y = Padding;
+  
+  for (let char of quote) {
+    if (char === ' ') {
+      x += Padding;
+      continue;
+    }
+    
+    if (letters[char.toLowerCase()]) {
+      let origin = [x, y];
+      RunInstructions(letters[char.toLowerCase()], origin, LetterPadding);
+      x += Padding;
+    }
+  }
+}
+
+// Generate and display a random quote
