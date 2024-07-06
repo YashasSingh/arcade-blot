@@ -109,4 +109,47 @@ var letters = {
     [2, -0.47],
     `f$2,u,f$-1,sa$90,d,f$4,l$90`
   ),
- 
+  ["2"]: `u,f$2,r$180,d,f$2,sa$90,arc$90:1,arc$-90:1,f$1,arc$-180:1`,
+  ["3"]: `sa$90,u,f$4,r$90,d,f$1,arc$180:1,f$1,r$180,f$1,arc$180:1,f$1`,
+  ["4"]: `u,f$2,sa$90,f$1,l$90,d,f$2,r$116.57,f$3.35,sa$-90,f$4`,
+  ["5"]: `u,sa$90,f$1,r$180,d,arc$-180:1,f$1,arc$-90:1,arc$90:1,sa$0,f$2`,
+  ["6"]: (origin, scale) => DrawBezier(
+    origin,
+    74,
+    scale,
+    bezierEasing(-0.018, [0.054, -0.373], [1, -0.758], 0.9181),
+    [3.2, -0.36],
+    `u,sa$90,f$1,d,arc$360:1`
+  ),
+  ["7"]: (origin, scale) => DrawBezier(
+    origin,
+    245,
+    scale,
+    bezierEasing(-5e-3, [0, -0.149], [0, 1], 0.206),
+    [4.5, -0.59],
+    `u,sa$90,f$4,r$90,d,f$2`
+  ),
+  ["8"]: `u,f$1,d,arc$-180:1,arc$360:1,arc$-180:1`,
+  ["9"]: (origin, scale) => DrawBezier(
+    origin,
+    168,
+    scale,
+    bezierEasing(-0.026, [0.369, 0], [1.277, -1.99], 0.793),
+    [3.1, -0.36],
+    `u,sa$90,f$1,d,arc$360:1`
+  )
+};
+var DrawBezier = (
+  origin,
+  rotation,
+  scale,
+  easing,
+  bezLen,
+  instructions
+) => {
+  const bezierEasing = new bt.BezierEasing(easing[0], easing[1], easing[2], easing[3]);
+  const origin2 = RunInstructions(instructions, origin, scale);
+  const bezOrg = bt.moveAlong(origin, rotation, (1 - bezierEasing(0)) * bezLen[0] * scale);
+  for (let i = 0; i <= 1; i += 0.01) {
+    drawLine(bezOrg, bt.moveAlong(bezOrg, rotation, (1 - bezierEasing(i)) * bezLen[0] * scale));
+    bezOrg = bt.moveAlong(bezOrg, rotation, (1 - bezierEasing(i)) * bezLen[0] * scale);
