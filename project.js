@@ -178,3 +178,16 @@ function displayQuote(quote) {
 }
 
 // Generate and display a random quote
+function generateQuote() {
+  let randomIndex = Math.floor(Math.random() * Quotes.length);
+  let randomQuote = Quotes[randomIndex];
+  displayQuote(randomQuote);
+}
+
+// Main Function
+function main() {
+  
+  generateQuote();
+}
+
+main();
