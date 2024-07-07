@@ -1,17 +1,22 @@
 /*
 @title: quote generator
-@author: Scott C
+@author: Yashas Singh
 @snapshot: snapshot01.png
 */
 
 // Generative Quote Generator (quotes are changable)
 
 const Quotes = [
-  "The best way to predict the future is to invent it.",
-  "Life is 10% what happens to us and 90% how we react to it.",
-  "The only way to do great work is to love what you do.",
-  "Success is not how high you have climbed, but how you make a positive difference to the world.",
-  "Your time is limited, don't waste it living someone else's life."
+  "Throughout Heaven And Earth, I Alone Am The Honored One.",
+  "Are You The Strongest Because You're Satoru Gojo, Or Are You Satoru Gojo Because You're The Strongest?",
+  "They would all bear witness To the bare flesh of the one who is free. To the one who left it all behind! And His overwhelming Intensity!",
+  "Stand proud, you are strong.",
+  "Salmon Roe",
+  "Love is the most twisted curse of them all",
+  "But you guys with all your blessings lost to a monkey like me who can't even use Jujutsu.",
+  "Dying to win and risking death to win are two completely different things",
+  "ironic isn't it? when granted everything, you can't do anything"
+
 ];
 
 const Padding = 12;
