@@ -2,6 +2,8 @@
 
 # Jujutsu Kaisen Quote Generator
 
+![image (4)](https://github.com/user-attachments/assets/61805a80-1cab-4168-ad0c-da74de39edf6)
+
 ## Overview
 
 This project is a Jujutsu Kaisen quote generator that randomly selects and displays quotes from the popular anime series "Jujutsu Kaisen." The generator uses a custom-built drawing system to render text on a graphical canvas.
